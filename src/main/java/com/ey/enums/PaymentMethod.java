@@ -1,8 +1,5 @@
 package com.ey.enums;
 
 public enum PaymentMethod {
-	UPI,
-	CARD,
-	CASH,
-	NETBANKING
+	UPI, CARD, CASH, NETBANKING
 }

@@ -7,58 +7,73 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Route {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int route_id;
-	private String from;
-	private String to;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long routeId;
+	private String fromLocation;
+	private String toLocation;
 	private double distance;
 	private double farePricePerKm;
-	
-	public Route(int route_id, String from, String to, double distance, double farePricePerKm) {
+
+
+	public Route() {
 		super();
-		this.route_id = route_id;
-		this.from = from;
-		this.to = to;
+	}
+
+	public Route(Long routeId, String fromLocation, String toLocation, double distance, double farePricePerKm) {
+		super();
+		this.routeId = routeId;
+		this.fromLocation = fromLocation;
+		this.toLocation = toLocation;
 		this.distance = distance;
 		this.farePricePerKm = farePricePerKm;
 	}
-	
-	public int getRoute_id() {
-		return route_id;
+
+	public Long getRouteId() {
+		return routeId;
 	}
-	public void setRoute_id(int route_id) {
-		this.route_id = route_id;
+
+	public void setRouteId(Long routeId) {
+		this.routeId = routeId;
 	}
-	public String getFrom() {
-		return from;
+
+	public String getFromLocation() {
+		return fromLocation;
 	}
-	public void setFrom(String from) {
-		this.from = from;
+
+	public void setFromLocation(String fromLocation) {
+		this.fromLocation = fromLocation;
 	}
-	public String getTo() {
-		return to;
+
+	public String getToLocation() {
+		return toLocation;
 	}
-	public void setTo(String to) {
-		this.to = to;
+
+	public void setToLocation(String toLocation) {
+		this.toLocation = toLocation;
 	}
+
 	public double getDistance() {
 		return distance;
 	}
+
 	public void setDistance(double distance) {
 		this.distance = distance;
 	}
+
 	public double getFarePricePerKm() {
 		return farePricePerKm;
 	}
+
 	public void setFarePricePerKm(double farePricePerKm) {
 		this.farePricePerKm = farePricePerKm;
 	}
+
 	@Override
 	public String toString() {
-		return "Route [route_id=" + route_id + ", from=" + from + ", to=" + to + ", distance=" + distance
-				+ ", farePricePerKm=" + farePricePerKm + "]";
+		return "Route [routeId=" + routeId + ", fromLocation=" + fromLocation + ", toLocation=" + toLocation
+				+ ", distance=" + distance + ", farePricePerKm=" + farePricePerKm + "]";
 	}
 
 }

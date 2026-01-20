@@ -9,68 +9,86 @@ import jakarta.persistence.Id;
 
 @Entity
 public class RouteStop {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int stopId;
-	
-	private int routeId;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long stopId;
+
+	private Long routeId;
 	private String stopName;
-	private int sequencrNumber;
-	LocalTime pickupTime;
+	private int sequenceNumber;
+	private LocalTime pickupTime;
 	private double distanceFromStart;
 	
-	public RouteStop(int stopId, int routeId, String stopName, int sequencrNumber, LocalTime pickupTime,
+
+	public RouteStop() {
+		super();
+	}
+
+	public RouteStop(Long stopId, Long routeId, String stopName, int sequenceNumber, LocalTime pickupTime,
 			double distanceFromStart) {
 		super();
 		this.stopId = stopId;
 		this.routeId = routeId;
 		this.stopName = stopName;
-		this.sequencrNumber = sequencrNumber;
+		this.sequenceNumber = sequenceNumber;
 		this.pickupTime = pickupTime;
 		this.distanceFromStart = distanceFromStart;
 	}
-	
-	public int getStopId() {
+
+	public Long getStopId() {
 		return stopId;
 	}
-	public void setStopId(int stopId) {
+
+	public void setStopId(Long stopId) {
 		this.stopId = stopId;
 	}
-	public int getRouteId() {
+
+	public Long getRouteId() {
 		return routeId;
 	}
-	public void setRouteId(int routeId) {
+
+	public void setRouteId(Long routeId) {
 		this.routeId = routeId;
 	}
+
 	public String getStopName() {
 		return stopName;
 	}
+
 	public void setStopName(String stopName) {
 		this.stopName = stopName;
 	}
-	public int getSequencrNumber() {
-		return sequencrNumber;
+
+	public int getSequenceNumber() {
+		return sequenceNumber;
 	}
-	public void setSequencrNumber(int sequencrNumber) {
-		this.sequencrNumber = sequencrNumber;
+
+	public void setSequenceNumber(int sequenceNumber) {
+		this.sequenceNumber = sequenceNumber;
 	}
+
 	public LocalTime getPickupTime() {
 		return pickupTime;
 	}
+
 	public void setPickupTime(LocalTime pickupTime) {
 		this.pickupTime = pickupTime;
 	}
+
 	public double getDistanceFromStart() {
 		return distanceFromStart;
 	}
+
 	public void setDistanceFromStart(double distanceFromStart) {
 		this.distanceFromStart = distanceFromStart;
 	}
+
 	@Override
 	public String toString() {
-		return "RouteStop [stopId=" + stopId + ", routeId=" + routeId + ", stopName=" + stopName + ", sequencrNumber="
-				+ sequencrNumber + ", pickupTime=" + pickupTime + ", distanceFromStart=" + distanceFromStart + "]";
+		return "RouteStop [stopId=" + stopId + ", routeId=" + routeId + ", stopName=" + stopName + ", sequenceNumber="
+				+ sequenceNumber + ", pickupTime=" + pickupTime + ", distanceFromStart=" + distanceFromStart + "]";
 	}
+
 
 }
